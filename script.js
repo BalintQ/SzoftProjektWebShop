@@ -75,28 +75,59 @@ let cart = [];
 
         // Termék adatai és módosítási lehetőségek
         // Ide kell a módosítás minden terméknek egyedi méret és szín választék (Csak simán hozzáadni a minta szerint)
-        item.innerHTML = `
-          <div>
-            <strong>${product.title}</strong> <br> Méret: 
-            <select class="size-select" style="display: inline-block; width: auto;">
-              <option value="S" ${product.size === 'S' ? 'selected' : ''}>S</option>
-              <option value="M" ${product.size === 'M' ? 'selected' : ''}>M</option>
-              <option value="L" ${product.size === 'L' ? 'selected' : ''}>L</option>
-            </select> <br>
-            Szín: 
-            <select class="color-select" onchange="updateProductColor(${index}, this.value)">
+        //az if terméknév benne a választások csak az adott termékre
+        if (product.title == 'Termék 1'){
+          item.innerHTML = `
+            <div>
+              <strong>${product.title}</strong> <br> Méret: 
+              <select class="size-select" style="display: inline-block; width: auto;">
+                <option value="38" ${product.size === '38' ? 'selected' : ''}>38</option>
+                <option value="39" ${product.size === '39' ? 'selected' : ''}>39</option>
+                <option value="40" ${product.size === '40' ? 'selected' : ''}>40</option>
+                <option value="41" ${product.size === '41' ? 'selected' : ''}>41</option>
+                <option value="42" ${product.size === '42' ? 'selected' : ''}>42</option>
+              </select> <br>
+              Szín: 
+              <select class="color-select" onchange="updateProductColor(${index}, this.value)">
+                <option value="Piros" ${product.color === 'Piros' ? 'selected' : ''}>Piros</option>
+                <option value="Kék" ${product.color === 'Kék' ? 'selected' : ''}>Kék</option>
+                <option value="Zöld" ${product.color === 'Zöld' ? 'selected' : ''}>Zöld</option>
+                <option value="Fekete" ${product.color === 'Fekete' ? 'selected' : ''}>Fekete</option>
+                <option value="Fehér" ${product.color === 'Fehér' ? 'selected' : ''}>Fehér</option>
+              </select> <br>
+              Mennyiség: <input type="number" class="quantity-input" value="${product.quantity}" min="1" style="width: 50px;">
+              <p>Darab ár: ${product.price} Ft <br>Összesen: ${product.price * product.quantity} Ft</p>
+              <button class="btn btn-danger btn-sm remove-from-cart-btn" style="float: right;">Eltávolítás</button>
+            </div>
+          `;}
+
+          if (product.title == 'Termék 2'){
+          item.innerHTML = `
+            <div>
+              <strong>${product.title}</strong> <br> Méret: 
+              <select class="size-select" style="display: inline-block; width: auto;">
+              <option value="40" ${product.size === '40' ? 'selected' : ''}>40</option>
+              <option value="41" ${product.size === '41' ? 'selected' : ''}>41</option>
+              <option value="42" ${product.size === '42' ? 'selected' : ''}>42</option>
+              <option value="43" ${product.size === '43' ? 'selected' : ''}>43</option>
+              <option value="44" ${product.size === '44' ? 'selected' : ''}>44</option>
+              <option value="45" ${product.size === '45' ? 'selected' : ''}>45</option>
+              </select> <br>
+              Szín: 
+              <select class="color-select" onchange="updateProductColor(${index}, this.value)">
               <option value="Piros" ${product.color === 'Piros' ? 'selected' : ''}>Piros</option>
               <option value="Kék" ${product.color === 'Kék' ? 'selected' : ''}>Kék</option>
               <option value="Zöld" ${product.color === 'Zöld' ? 'selected' : ''}>Zöld</option>
-              <option value="Fekete" ${product.color === 'Fekete' ? 'selected' : ''}>Fekete</option>
               <option value="Fehér" ${product.color === 'Fehér' ? 'selected' : ''}>Fehér</option>
               <option value="Lila" ${product.color === 'Lila' ? 'selected' : ''}>Lila</option>
-            </select> <br>
-            Mennyiség: <input type="number" class="quantity-input" value="${product.quantity}" min="1" style="width: 50px;">
-            <p>Darab ár: ${product.price} Ft <br>Összesen: ${product.price * product.quantity} Ft</p>
-            <button class="btn btn-danger btn-sm remove-from-cart-btn" style="float: right;">Eltávolítás</button>
-          </div>
-        `;
+              </select> <br>
+              Mennyiség: <input type="number" class="quantity-input" value="${product.quantity}" min="1" style="width: 50px;">
+              <p>Darab ár: ${product.price} Ft <br>Összesen: ${product.price * product.quantity} Ft</p>
+              <button class="btn btn-danger btn-sm remove-from-cart-btn" style="float: right;">Eltávolítás</button>
+            </div>
+          `;}
+
+
 
         // Mennyiség változás
         item.querySelector('.quantity-input').addEventListener('change', (e) => {

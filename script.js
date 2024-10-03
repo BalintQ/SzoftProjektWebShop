@@ -18,7 +18,8 @@ let cart = [];
         'Kék': 'https://via.placeholder.com/150/0000FF',
         'Zöld': 'https://via.placeholder.com/150/008000',
         'Fekete': 'https://via.placeholder.com/150/000000',
-        'Fehér': 'https://via.placeholder.com/150/FFFFFF'
+        'Fehér': 'https://via.placeholder.com/150/FFFFFF', //kell színhez képet adni
+        'Lila': 'https://via.placeholder.com/150/800080'
       }
     };
 
@@ -73,15 +74,15 @@ let cart = [];
         item.classList.add('list-group-item');
 
         // Termék adatai és módosítási lehetőségek
-        // Ide kell a módosítás minden terméknek egyedi méret és szín választék
+        // Ide kell a módosítás minden terméknek egyedi méret és szín választék (Csak simán hozzáadni a minta szerint)
         item.innerHTML = `
           <div>
-            <strong>${product.title}</strong> - Méret: 
+            <strong>${product.title}</strong> <br> Méret: 
             <select class="size-select" style="display: inline-block; width: auto;">
               <option value="S" ${product.size === 'S' ? 'selected' : ''}>S</option>
               <option value="M" ${product.size === 'M' ? 'selected' : ''}>M</option>
               <option value="L" ${product.size === 'L' ? 'selected' : ''}>L</option>
-            </select>
+            </select> <br>
             Szín: 
             <select class="color-select" onchange="updateProductColor(${index}, this.value)">
               <option value="Piros" ${product.color === 'Piros' ? 'selected' : ''}>Piros</option>
@@ -89,8 +90,10 @@ let cart = [];
               <option value="Zöld" ${product.color === 'Zöld' ? 'selected' : ''}>Zöld</option>
               <option value="Fekete" ${product.color === 'Fekete' ? 'selected' : ''}>Fekete</option>
               <option value="Fehér" ${product.color === 'Fehér' ? 'selected' : ''}>Fehér</option>
-            </select>
+              <option value="Lila" ${product.color === 'Lila' ? 'selected' : ''}>Lila</option>
+            </select> <br>
             Mennyiség: <input type="number" class="quantity-input" value="${product.quantity}" min="1" style="width: 50px;">
+            <p>Darab ár: ${product.price} Ft <br>Összesen: ${product.price * product.quantity} Ft</p>
             <button class="btn btn-danger btn-sm remove-from-cart-btn" style="float: right;">Eltávolítás</button>
           </div>
         `;

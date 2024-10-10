@@ -7,7 +7,7 @@ let cart = [];
     // Képek színek szerint
     const productImages = {
       '1': {
-        'Piros': 'https://via.placeholder.com/150/FF0000',
+        'Arany-Fehér': 'https://via.placeholder.com/150/FF0000',
         'Kék': 'https://via.placeholder.com/150/0000FF',
         'Zöld': 'https://via.placeholder.com/150/008000',
         'Fekete': 'https://via.placeholder.com/150/000000',

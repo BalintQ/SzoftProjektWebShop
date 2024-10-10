@@ -14,3 +14,10 @@
         max-height: 400px;
         overflow-y: scroll;
       }
+      /*szűrő széle */
+      .sidenav {
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0px;}

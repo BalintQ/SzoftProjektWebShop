@@ -5,10 +5,10 @@
         right: -300px;
         width: 300px;
         height: 100%;
-        background-color: #f8f9fa;
+        background-color: #ffd4fb;
         padding: 20px;
         transition: right 0.3s;
-        box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: -2px 0px 10px rgb(255, 31, 225);
       }
       #cart-items {
         max-height: 400px;

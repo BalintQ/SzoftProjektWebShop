@@ -21,24 +21,20 @@
     <div class="row flex-nowrap">
         <div class="col-1 col-md-1 col-xl-2 px-sm-1 px-0 bg-dark sidenav">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline">Menu</span>
-                </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
-                    </li>
-                </ul>
+              <label for="nem" class="align-midle">Neme:</label>
+              <select id="nem">
+                  <option value="all">Összes</option>
+                  <option value="ferfi">Férfi</option>
+                  <option value="no">Nő</option>
+              </select>
+              
+              <label for="kategoria" class="align-midle">Kategória:</label>
+              <select id="kategoria">
+                  <option value="all">Összes</option>
+                  <option value="ruha">Ruha</option>
+                  <option value="cipok">Cipők</option>
+                  <option value="kiegeszito">Kiegészítők</option>
+              </select>
             </div>
         </div>
     </div>
@@ -50,10 +46,10 @@
   <button class="btn btn-outline-success" id="toggle-cart-btn" style="position: fixed; right: 20px; top: 10px; z-index: 1000;">Kosár</button>
 
   <!-- Termékek -->
-  <div class="container mt-4">
+  <div class="container mt-4 product">
     <div class="row" id="product-list">
       <!-- Termékek kártyái -->
-      <div class="col-md-4 ferfi">
+      <div class="col-md-4" data-nem="ferfi" data-kategoria="ruha">
         <div class="card">
           <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 1 Piros" id="product-image-1">
           <div class="card-body">
@@ -86,7 +82,7 @@
       </div>
 
       <!-- Új termék -->
-      <div class="col-md-4 noi">
+      <div class="col-md-4" data-nem="ferfi" data-kategoria="cipok">
         <div class="card">
           <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
           <div class="card-body">
@@ -120,7 +116,7 @@
 
       <!-- További termékek hozzáadása hasonlóan -->
 
-      <div class="col-md-4 noi">
+      <div class="col-md-4" data-nem="ferfi" data-kategoria="kiegeszito">
         <div class="card">
           <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
           <div class="card-body">
@@ -152,7 +148,7 @@
         </div>
       </div>
 
-      <div class="col-md-4 noi">
+      <div class="col-md-4 no" data-nem="no" data-kategoria="ruha">
         <div class="card">
           <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
           <div class="card-body">
@@ -184,7 +180,7 @@
         </div>
       </div>
     
-      <div class="col-md-4 noi">
+      <div class="col-md-4 no" data-nem="no" data-kategoria="cipok">
         <div class="card">
           <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
           <div class="card-body">
@@ -216,7 +212,7 @@
         </div>
       </div>
 
-      <div class="col-md-4 noi">
+      <div class="col-md-4 no" data-nem="no" data-kategoria="kiegeszito">
         <div class="card">
           <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
           <div class="card-body">

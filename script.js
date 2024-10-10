@@ -165,7 +165,7 @@ function filterProducts() {
 
       const matchesNem = nem == 'all' || productNem == nem;
       const matchesKategoria = kategoria == 'all' || productKategoria == kategoria;
-      console.log()
+      
       if (matchesNem && matchesKategoria) {
           productContainer.classList.remove('d-none');
           productContainer.classList.add('col-md-4');

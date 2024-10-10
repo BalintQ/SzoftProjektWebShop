@@ -21,3 +21,22 @@
         position: fixed;
         z-index: 1;
         top: 0px;}
+
+        .product {
+          display: flex;          /* Flexbox aktiválása */
+          flex-wrap: wrap;       /* Kártyák automatikus újrarendezése, ha szükséges */
+          gap: 20px;             /* Kártyák közötti távolság */
+          justify-content: flex-start; /* Balra igazítás */
+      }
+      
+      .card {
+          width: 400px;          /* Fix szélesség */
+          height: 700px;         /* Fix magasság */
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Árnyék a kártyáknak */
+          border-radius: 5px;    /* Lekerekített sarkok */
+          display: flex;          /* Flexbox a kártyán belül */
+          flex-direction: column; /* Kártya belső elrendezésének iránya */
+          justify-content: space-between; /* Kártya tartalom elrendezése */
+          margin-top: 40px;
+      }
+      

@@ -24,12 +24,24 @@ const productImages = {
     'Plüssmintás Zöld' : './Kepek/alacsonyszaru/ferfi/AIR JORDAN 1 LOWplussmintas zold.jfif',
   },
   '2': {
-    'Piros': 'https://via.placeholder.com/150/FF0000',
-    'Kék': 'https://via.placeholder.com/150/0000FF',
-    'Zöld': 'https://via.placeholder.com/150/008000',
-    'Fekete': 'https://via.placeholder.com/150/000000',
-    'Fehér': 'https://via.placeholder.com/150/FFFFFF',
-    'Lila': 'https://via.placeholder.com/150/800080'
+    'Barna': ,
+    'Barna-Fekete': 'https://via.placeholder.com/150/0000FF',
+    'Bőszínű': 'https://via.placeholder.com/150/008000',
+    'Fehér': 'https://via.placeholder.com/150/000000',
+    'Fekete': 'https://via.placeholder.com/150/FFFFFF',
+    'Fekete-Fehér': 'https://via.placeholder.com/150/800080',
+    'Fekete-Kék': '',
+    'Kék-Fehér': '',
+    'Lila-Rózsaszín': '',
+    'Rózsaszín': '',
+    'Rózsaszín-Fehér': '',
+    'Vérvörös': '',
+    'Világoskék': '',
+    'Magenta': '',
+    'Szürke-Fehér': '',
+    'Zöld-Fehér': '',
+
+
   }
 };
 

@@ -16,14 +16,40 @@
     </div>
   </nav>
 
+  <!--szűrők -->
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-1 col-md-1 col-xl-2 px-sm-1 px-0 bg-dark sidenav">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+              <label for="nem" class="align-midle">Neme:</label>
+              <select id="nem">
+                  <option value="all">Összes</option>
+                  <option value="ferfi">Férfi</option>
+                  <option value="no">Nő</option>
+              </select>
+              
+              <label for="kategoria" class="align-midle">Kategória:</label>
+              <select id="kategoria">
+                  <option value="all">Összes</option>
+                  <option value="ruha">Ruha</option>
+                  <option value="cipok">Cipők</option>
+                  <option value="kiegeszito">Kiegészítők</option>
+              </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
   <!-- Kosár gomb -->
   <button class="btn btn-outline-success" id="toggle-cart-btn" style="position: fixed; right: 20px; top: 10px; z-index: 1000;">Kosár</button>
 
   <!-- Termékek -->
-  <div class="container mt-4">
+  <div class="container mt-4 product">
     <div class="row" id="product-list">
       <!-- Termékek kártyái -->
-      <div class="col-md-4">
+      <div class="col-md-4" data-nem="ferfi" data-kategoria="ruha">
         <div class="card">
           <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 1 Piros" id="product-image-1">
           <div class="card-body">
@@ -67,7 +93,7 @@
       </div>
 
       <!-- Új termék -->
-      <div class="col-md-4">
+      <div class="col-md-4" data-nem="ferfi" data-kategoria="cipok">
         <div class="card">
           <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
           <div class="card-body">
@@ -100,6 +126,134 @@
       </div>
 
       <!-- További termékek hozzáadása hasonlóan -->
+
+      <div class="col-md-4" data-nem="ferfi" data-kategoria="kiegeszito">
+        <div class="card">
+          <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
+          <div class="card-body">
+            <h5 class="card-title">Termék 2</h5>
+            <p>Ár: 3000 Ft</p>
+            <div>
+              <label>Méret:</label>
+              <select class="form-select size-select">
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+              </select>
+            </div>
+            <div class="mt-2">
+              <label>Szín:</label>
+              <select class="form-select color-select" onchange="changeProductImage('2', this.value)"> <!--a js ben is kell módosítani a színt -->
+                <option value="Piros">Piros</option>
+                <option value="Kék">Kék</option>
+                <option value="Zöld">Zöld</option>
+                <option value="Fehér">Fehér</option>
+                <option value="Lila">Lila</option>
+              </select>
+            </div>
+            <button class="btn btn-primary mt-3 add-to-cart-btn">Kosárba</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 no" data-nem="no" data-kategoria="ruha">
+        <div class="card">
+          <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
+          <div class="card-body">
+            <h5 class="card-title">Termék 2</h5>
+            <p>Ár: 3000 Ft</p>
+            <div>
+              <label>Méret:</label>
+              <select class="form-select size-select">
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+              </select>
+            </div>
+            <div class="mt-2">
+              <label>Szín:</label>
+              <select class="form-select color-select" onchange="changeProductImage('2', this.value)"> <!--a js ben is kell módosítani a színt -->
+                <option value="Piros">Piros</option>
+                <option value="Kék">Kék</option>
+                <option value="Zöld">Zöld</option>
+                <option value="Fehér">Fehér</option>
+                <option value="Lila">Lila</option>
+              </select>
+            </div>
+            <button class="btn btn-primary mt-3 add-to-cart-btn">Kosárba</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-4 no" data-nem="no" data-kategoria="cipok">
+        <div class="card">
+          <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
+          <div class="card-body">
+            <h5 class="card-title">Termék 2</h5>
+            <p>Ár: 3000 Ft</p>
+            <div>
+              <label>Méret:</label>
+              <select class="form-select size-select">
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+              </select>
+            </div>
+            <div class="mt-2">
+              <label>Szín:</label>
+              <select class="form-select color-select" onchange="changeProductImage('2', this.value)"> <!--a js ben is kell módosítani a színt -->
+                <option value="Piros">Piros</option>
+                <option value="Kék">Kék</option>
+                <option value="Zöld">Zöld</option>
+                <option value="Fehér">Fehér</option>
+                <option value="Lila">Lila</option>
+              </select>
+            </div>
+            <button class="btn btn-primary mt-3 add-to-cart-btn">Kosárba</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 no" data-nem="no" data-kategoria="kiegeszito">
+        <div class="card">
+          <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
+          <div class="card-body">
+            <h5 class="card-title">Termék 2</h5>
+            <p>Ár: 3000 Ft</p>
+            <div>
+              <label>Méret:</label>
+              <select class="form-select size-select">
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+              </select>
+            </div>
+            <div class="mt-2">
+              <label>Szín:</label>
+              <select class="form-select color-select" onchange="changeProductImage('2', this.value)"> <!--a js ben is kell módosítani a színt -->
+                <option value="Piros">Piros</option>
+                <option value="Kék">Kék</option>
+                <option value="Zöld">Zöld</option>
+                <option value="Fehér">Fehér</option>
+                <option value="Lila">Lila</option>
+              </select>
+            </div>
+            <button class="btn btn-primary mt-3 add-to-cart-btn">Kosárba</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

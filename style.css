@@ -44,6 +44,7 @@
       .Img_base{
         width: 398px;
         height: 398px;
+        overflow: hidden;
       }
       .Img_base img {
         object-fit: cover;

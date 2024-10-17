@@ -39,4 +39,11 @@
           justify-content: space-between; /* Kártya tartalom elrendezése */
           margin-top: 40px;
       }
+      .Img_base{
+        width: 398px;
+        height: 398px;
+      }
+      .Img_base img {
+        object-fit: cover;
+      }
       

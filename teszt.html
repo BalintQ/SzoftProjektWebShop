@@ -16,24 +16,24 @@
     </div>
   </nav>
 
-  <!--szűrők -->
+  <!-- Szűrők -->
   <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-1 col-md-1 col-xl-2 px-sm-1 px-0 bg-dark sidenav">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-              <label for="nem" class="align-midle">Neme:</label>
+              <label for="nem" class="align-midle">Nem:</label>
               <select id="nem">
                   <option value="all">Összes</option>
                   <option value="ferfi">Férfi</option>
-                  <option value="no">Nő</option>
+                  <option value="no">Női</option>
               </select>
               
               <label for="kategoria" class="align-midle">Kategória:</label>
               <select id="kategoria">
                   <option value="all">Összes</option>
-                  <option value="ruha">Ruha</option>
-                  <option value="cipok">Cipők</option>
-                  <option value="kiegeszito">Kiegészítők</option>
+                  <option value="alacsony">Alacsonyszárú</option>
+                  <option value="kozep">Középmagasszárú</option>
+                  <option value="magas">Magasszárú</option>
               </select>
             </div>
         </div>
@@ -49,11 +49,8 @@
   <div class="container mt-4 product">
     <div class="row" id="product-list">
       <!-- Termékek kártyái -->
-      <div class="col-md-4" data-nem="ferfi" data-kategoria="ruha">
+      <div class="termek col-md-4" data-nem="ferfi" data-kategoria="alacsony">
         <div class="card">
-
-          
-
           <div class="Img_base">
           <img src="./Kepek/alacsonyszaru/ferfi/AIR JORDAN 1 LOW arany_feher.jfif" class="card-img-top" alt="Termék 1 Piros" id="product-image-1">
           </div>
@@ -94,12 +91,11 @@
               </select>
             </div>
             <button class="btn btn-info mt-3 add-to-cart-btn">Kosárba</button>
-          </div>
-        </div>
+          </div></div>
       </div>
 
       <!-- Új termék -->
-      <div class="col-md-4" data-nem="ferfi" data-kategoria="cipok">
+      <div class="termek col-md-4" data-nem="ferfi" data-kategoria="kozep">
         <div class="card">
           <div class="Img_base">
             <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
@@ -120,7 +116,7 @@
             </div>
             <div class="mt-2">
               <label>Szín:</label>
-              <select class="form-select color-select" onchange="changeProductImage('2', this.value)"> <!--a js ben is kell módosítani a színt -->
+              <select class="form-select color-select" onchange="changeProductImage('2', this.value)"> <!-- A js ben is kell módosítani a színt -->
                 <option value="Piros">Piros</option>
                 <option value="Kék">Kék</option>
                 <option value="Zöld">Zöld</option>
@@ -135,7 +131,7 @@
 
       <!-- További termékek hozzáadása hasonlóan -->
 
-      <div class="col-md-4" data-nem="ferfi" data-kategoria="kiegeszito">
+      <div class="termek col-md-4" data-nem="ferfi" data-kategoria="magas">
         <div class="card">
           <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
           <div class="card-body">
@@ -167,7 +163,7 @@
         </div>
       </div>
 
-      <div class="col-md-4 no" data-nem="no" data-kategoria="ruha">
+      <div class="termek col-md-4" data-nem="no" data-kategoria="alacsony">
         <div class="card">
           <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
           <div class="card-body">
@@ -199,7 +195,7 @@
         </div>
       </div>
     
-      <div class="col-md-4 no" data-nem="no" data-kategoria="cipok">
+      <div class="termek col-md-4" data-nem="no" data-kategoria="kozep">
         <div class="card">
           <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
           <div class="card-body">
@@ -231,7 +227,7 @@
         </div>
       </div>
 
-      <div class="col-md-4 no" data-nem="no" data-kategoria="kiegeszito">
+      <div class="termek col-md-4" data-nem="no" data-kategoria="magas">
         <div class="card">
           <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
           <div class="card-body">

@@ -172,30 +172,33 @@ function updateProductColor(index, color) {
 function filterProducts() {
   const nem = document.getElementById('nem').value;
   const kategoria = document.getElementById('kategoria').value;
-  const cards = document.querySelectorAll('.card');
-  const productContainer = document.querySelector('.col-md-4'); // A szülő div
-  console.log( "nem ,",nem)
-  console.log( "kat,",kategoria)
-  console.log( "card ,",cards)
-  console.log( "cont ,",productContainer)
+  const cards = document.querySelectorAll('.termek');
+
+  let anyVisible = false; // Flag a látható termékekhez
 
   cards.forEach(card => {
       const productNem = card.dataset.nem;
       const productKategoria = card.dataset.kategoria;
 
-      const matchesNem = nem == 'all' || productNem == nem;
-      const matchesKategoria = kategoria == 'all' || productKategoria == kategoria;
-      
+      const matchesNem = nem === 'all' || productNem === nem;
+      const matchesKategoria = kategoria === 'all' || productKategoria === kategoria;
+
       if (matchesNem && matchesKategoria) {
-          productContainer.classList.remove('d-none');
-          productContainer.classList.add('col-md-4');
+          card.classList.remove('d-none');
+          card.classList.add('col-md-4');
+          anyVisible = true; // Legalább egy termék látható
       } else {
-          productContainer.classList.add('d-none');
-          productContainer.classList.remove('col-md-4');
+          card.classList.add('d-none');
+          card.classList.remove('col-md-4');
       }
   });
 
+  // Ha nincs látható termék, akkor egy figyelmeztetést is adhatsz
+  if (!anyVisible) {
+      console.log("Nincs megjeleníthető termék a kiválasztott feltételekkel.");
+  }
 }
+
 
 
 // Szűrő események

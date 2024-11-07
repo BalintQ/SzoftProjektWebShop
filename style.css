@@ -18,12 +18,12 @@
       /*szűrő széle */
       .sidenav {
         height: 100%;
-        width: 160px;
+        width: 200px;
         position: fixed;
         z-index: 1;
         top: 0px;}
 
-        .product {
+        .termek {
           display: flex;          /* Flexbox aktiválása */
           flex-wrap: wrap;       /* Kártyák automatikus újrarendezése, ha szükséges */
           gap: 20px;             /* Kártyák közötti távolság */

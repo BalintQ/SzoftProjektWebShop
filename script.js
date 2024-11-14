@@ -1,7 +1,7 @@
 let cart = [];
 const productPrices = {
   "Air Jordan 1 Low": 39990,
-  "Termék 2": 3000
+  "Air Jordan 1 Low": 35999,
 };
 
 // Képek színek szerint

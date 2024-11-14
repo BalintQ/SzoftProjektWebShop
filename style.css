@@ -5,7 +5,7 @@
         right: -300px;
         width: 300px;
         height: 100%;
-        background-color: #221b3b;
+        background-color: #ac9ce9;
         padding: 20px;
         transition: right 0.3s;
         box-shadow: -2px 0px 10px rgb(174, 221, 243);
@@ -33,7 +33,7 @@
       .card {
           width: 400px;          /* Fix szélesség */
           height: 700px;         /* Fix magasság */
-          box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Árnyék a kártyáknak */
+          box-shadow: 0 2px 5px rgba(206, 7, 179, 0.1); /* Árnyék a kártyáknak */
           border-radius: 5px;    /* Lekerekített sarkok */
           display: flex;          /* Flexbox a kártyán belül */
           flex-direction: column; /* Kártya belső elrendezésének iránya */

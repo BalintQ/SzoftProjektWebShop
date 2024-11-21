@@ -15,24 +15,47 @@
         overflow-y: scroll;
       }
 
-      /*szűrő széle */
-      .sidenav {
-        height: 100%;
-        width: 200px;
-        position: fixed;
-        z-index: 1;
-        top: 0px;}
+
+      .logo{
+        left: 13%;
+        position: absolute;
+        top: 10px;
+      }
+
+      nav{
+        height: 80px;
+        width: 100%;
+        position: sticky;
+      }
 
         .termek {
-          display: flex;          /* Flexbox aktiválása */
+          display: flex;   
+          flex-direction: row;       /* Flexbox aktiválása */
           flex-wrap: wrap;       /* Kártyák automatikus újrarendezése, ha szükséges */
           gap: 20px;             /* Kártyák közötti távolság */
-          justify-content: flex-start; /* Balra igazítás */
-      }
+          justify-content: flex-end; /* Balra igazítás */
+          flex: 33%
+          }
+
+          @media screen and (max-width: 1100px) {
+            .termek {
+              width: 100%;
+              display: block;
+              margin-bottom: 20px;
+              flex-direction: column;
+            }
+          }
+      
+          
+        @media screen and (max-width: 1400px) {
+            .termek {
+              flex: 50%;
+            }
+          }
       
       .card {
           width: 400px;          /* Fix szélesség */
-          height: 700px;         /* Fix magasság */
+          height: 1wh;         /* Fix magasság */
           box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Árnyék a kártyáknak */
           border-radius: 5px;    /* Lekerekített sarkok */
           display: flex;          /* Flexbox a kártyán belül */
@@ -42,10 +65,33 @@
       }
 
       .Img_base{
-        width: 398px;
-        height: 398px;
+        width: 100%;
+        height: auto;
         overflow: hidden;
       }
       .Img_base img {
         object-fit: cover;
+      }
+
+      /*szűrő dolgok */
+      .hidden {
+        display: none;
+    }
+    #szurob{
+      position: fixed; 
+      left: 20px; 
+      top: 10px; 
+      z-index: 1000;
+    }
+    .szurobelso{
+      position: relative;
+      top: 40px;
+    }
+    /*szűrő széle */
+      .sidenav {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0px;
       }

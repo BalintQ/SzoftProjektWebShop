@@ -1,7 +1,7 @@
 let cart = [];
 const productPrices = {
-  "Air Jordan 1 Low": 39990,
-  "Termék 2": 3000
+  "Férfi Air Jordan 1 Low": 39990,
+  " Női Air Jordan 1 Low": 35999,
 };
 
 //szűrő meg jelenít
@@ -40,12 +40,24 @@ const productImages = {
     'Plüssmintás Zöld' : './Kepek/alacsonyszaru/ferfi/AIR JORDAN 1 LOWplussmintas zold.jfif',
   },
   '2': {
-    'Piros': 'https://via.placeholder.com/150/FF0000',
-    'Kék': 'https://via.placeholder.com/150/0000FF',
-    'Zöld': 'https://via.placeholder.com/150/008000',
-    'Fekete': 'https://via.placeholder.com/150/000000',
-    'Fehér': 'https://via.placeholder.com/150/FFFFFF',
-    'Lila': 'https://via.placeholder.com/150/800080'
+    'Barna': './Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOW barna.jfif',
+    'Barna-Fekete': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOW barna_fekete.jfif',
+    'Bőszínű': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOW borszinu.jfif',
+    'Fehér': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOW feher.png',
+    'Fekete': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOW fekete.jfif',
+    'Fekete-Fehér': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOW fekete_feher.jfif',
+    'Fekete-Kék': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOW fekete_kek.jfif',
+    'Kék-Fehér': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOW kek_feher.jfif',
+    'Lila-Rózsaszín': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOW lila_rozsaszin.jfif',
+    'Rózsaszín': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOW rozsaszin.jfif',
+    'Rózsaszín-Fehér': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOW rozsaszin_feher.jfif',
+    'Vérvörös': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOW vervoros.png',
+    'Világoskék': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOW vilagoskek.jfif',
+    'Magenta': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOWmagenta.jfif',
+    'Szürke-Fehér': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOWszurke_feher.jfif',
+    'Zöld-Fehér': 'Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOWzold_feher.jfif',
+
+
   }
 };
 
@@ -132,25 +144,35 @@ function updateCart() {
       `;
     }
 
-    if (product.title === 'Termék 2') {
+    if (product.title === 'Air Jordan 1 Low') {
       item.innerHTML = `
         <div>
           <strong>${product.title}</strong> <br> Méret: 
           <select class="size-select" style="display: inline-block; width: auto;">
-            <option value="40" ${product.size === '40' ? 'selected' : ''}>40</option>
-            <option value="41" ${product.size === '41' ? 'selected' : ''}>41</option>
-            <option value="42" ${product.size === '42' ? 'selected' : ''}>42</option>
-            <option value="43" ${product.size === '43' ? 'selected' : ''}>43</option>
-            <option value="44" ${product.size === '44' ? 'selected' : ''}>44</option>
-            <option value="45" ${product.size === '45' ? 'selected' : ''}>45</option>
+            <option value="40" ${product.size === '35' ? 'selected' : ''}>35</option>
+            <option value="41" ${product.size === '36' ? 'selected' : ''}>36</option>
+            <option value="42" ${product.size === '37' ? 'selected' : ''}>37</option>
+            <option value="43" ${product.size === '38' ? 'selected' : ''}>38</option>
+            <option value="44" ${product.size === '39' ? 'selected' : ''}>39</option>
+            <option value="45" ${product.size === '40' ? 'selected' : ''}>40</option>
           </select> <br>
           Szín: 
           <select class="color-select" onchange="updateProductColor(${index}, this.value)">
-            <option value="Piros" ${product.color === 'Piros' ? 'selected' : ''}>Piros</option>
-            <option value="Kék" ${product.color === 'Kék' ? 'selected' : ''}>Kék</option>
-            <option value="Zöld" ${product.color === 'Zöld' ? 'selected' : ''}>Zöld</option>
+            <option value="Barna" ${product.color === 'Barna' ? 'selected' : ''}>Barna</option>
+            <option value="Barna-Fekete" ${product.color === 'Barna-Fekete' ? 'selected' : ''}>Barna-Fekete</option>
+            <option value="Bőrszínű" ${product.color === 'Bőrszínű' ? 'selected' : ''}>Bőrszínű</option>
             <option value="Fehér" ${product.color === 'Fehér' ? 'selected' : ''}>Fehér</option>
-            <option value="Lila" ${product.color === 'Lila' ? 'selected' : ''}>Lila</option>
+            <option value="Fekete" ${product.color === 'Fekete' ? 'selected' : ''}>Fekete</option>
+            <option value="Fekete-Kék" ${product.color === 'Fekete-Kék' ? 'selected' : ''}>Fekete-Kék</option>
+            <option value="Kék-Fehér" ${product.color === 'Kék-Fehér' ? 'selected' : ''}>Kék-Fehér</option>
+            <option value="Lila-Rózsaszín" ${product.color === 'Lila-Rózsaszín' ? 'selected' : ''}>Lila-Rózsaszín</option>
+            <option value="Rózsaszín" ${product.color === 'Rózsaszín' ? 'selected' : ''}>Rózsaszín</option>
+            <option value="Rózsaszín-Fehér" ${product.color === 'Rózsaszín-Fehér"' ? 'selected' : ''}>Rózsaszín-Fehér"</option>
+            <option value="Vérvörös" ${product.color === 'Vérvörös' ? 'selected' : ''}>Vérvörös</option>
+            <option value="Világoskék" ${product.color === 'Világoskék' ? 'selected' : ''}>Világoskék</option>
+            <option value="Szürke-Fehér" ${product.color === 'Szürke-Fehér' ? 'selected' : ''}>Szürke-Fehér</option>
+            <option value="Zöld-Fehér" ${product.color === 'Zöld-Fehér' ? 'selected' : ''}>Zöld-Fehér</option>
+          
           </select> <br>
           Mennyiség: <input type="number" class="quantity-input" value="${product.quantity}" min="1" style="width: 50px;">
           <p>Darab ár: ${product.price} Ft <br>Összesen: ${product.price * product.quantity} Ft</p>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../logo_mini.jpg" type="image/icon type">
+  <title>KickCraze | Visszaküldés</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./vissza_style.css">
+</head>
+<body>
+    <!-- Fejléc -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">  
+      <a class="navbar-brand" href="#"><img src="../logo.jpg" alt="" height="60px" width="60px" class="logo"></a>
+    </div>
+  </nav>
+
+  <input type="file" id="fileInput" accept=".json" />
+  <h2>A Termékek Listája:</h2>
+<br>
+
+  <div class="center">
+  <table class="table table-striped w-75">
+    <thead>
+        <tr>
+            <th>Név</th>
+            <th>Méret</th>
+            <th>Szín</th>
+            <th>Mennyiség</th>
+            <th>Darab ár</th>
+        </tr>
+    </thead>
+    <tbody id="productTableBody">
+        <!-- Ide kerülnek a termékek -->
+    </tbody>
+  </table>
+  </div>
+
+  <script src="./visszascript.js"></script>
+</body>

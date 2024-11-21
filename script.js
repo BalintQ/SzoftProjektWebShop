@@ -228,8 +228,15 @@ checkoutBtn.addEventListener('click', () => {
     alert("A kosár üres.");
   } else {
     let receipt = "Kosár tartalma:\n";
-    cart.forEach(product => {
+    const purchaseData = cart.map(product => {
       receipt += `${product.title} - Méret: ${product.size}, Szín: ${product.color}, Mennyiség: ${product.quantity}, Darab ára: ${product.price} Ft, Összesen: ${product.price * product.quantity} Ft\n`;
+      return {
+        Név: product.title,
+        Méret: product.size,
+        Szín: product.color,
+        Mennyiség: product.quantity,
+        Darab_ár: product.price
+      };
     });
     receipt += `\n ${document.getElementById('total-price').textContent}`;
 
@@ -239,5 +246,16 @@ checkoutBtn.addEventListener('click', () => {
     printWindow.focus();
     printWindow.print();
     printWindow.close();
+
+    let sorszam = Math.floor(Math.random() * 9999) + 1000;
+    alert("Az ön rendelési száma: "+sorszam)
+
+    // JSON fájl generálása és letöltés elindítása
+    const blob = new Blob([JSON.stringify(purchaseData, null, 2)], { type: 'application/json' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = sorszam+'.json'; // A fájl neve, amit a felhasználó letölthet
+    link.click();  // Automatikusan elindítja a letöltést
+    
   }
 });

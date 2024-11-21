@@ -1,0 +1,16 @@
+.logo{
+    left: 13%;
+    position: absolute;
+    top: 10px;
+  }
+
+  nav{
+    height: 80px;
+    width: 100%;
+    position: sticky;
+  }
+.center{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+}

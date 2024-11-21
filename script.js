@@ -4,6 +4,22 @@ const productPrices = {
   " Női Air Jordan 1 Low": 35999,
 };
 
+//szűrő meg jelenít
+const toggleButton = document.getElementById('szurob');
+const filterDiv = document.getElementById('szuro');
+
+toggleButton.addEventListener('click', function() {
+    if (filterDiv.classList.contains('hidden')) {
+        filterDiv.classList.remove('hidden');
+        filterDiv.classList.add('show');
+    } else {
+        filterDiv.classList.remove('show');
+        filterDiv.classList.add('hidden');
+    }
+});
+
+
+
 // Képek színek szerint
 const productImages = {
   '1': {
@@ -194,30 +210,33 @@ function updateProductColor(index, color) {
 function filterProducts() {
   const nem = document.getElementById('nem').value;
   const kategoria = document.getElementById('kategoria').value;
-  const cards = document.querySelectorAll('.card');
-  const productContainer = document.querySelector('.col-md-4'); // A szülő div
-  console.log( "nem ,",nem)
-  console.log( "kat,",kategoria)
-  console.log( "card ,",cards)
-  console.log( "cont ,",productContainer)
+  const cards = document.querySelectorAll('.termek');
+
+  let anyVisible = false; // Flag a látható termékekhez
 
   cards.forEach(card => {
       const productNem = card.dataset.nem;
       const productKategoria = card.dataset.kategoria;
 
-      const matchesNem = nem == 'all' || productNem == nem;
-      const matchesKategoria = kategoria == 'all' || productKategoria == kategoria;
-      
+      const matchesNem = nem === 'all' || productNem === nem;
+      const matchesKategoria = kategoria === 'all' || productKategoria === kategoria;
+
       if (matchesNem && matchesKategoria) {
-          productContainer.classList.remove('d-none');
-          productContainer.classList.add('col-md-4');
+          card.classList.remove('d-none');
+          card.classList.add('col-md-4');
+          anyVisible = true; // Legalább egy termék látható
       } else {
-          productContainer.classList.add('d-none');
-          productContainer.classList.remove('col-md-4');
+          card.classList.add('d-none');
+          card.classList.remove('col-md-4');
       }
   });
 
+  // Ha nincs látható termék, akkor egy figyelmeztetést is adhatsz
+  if (!anyVisible) {
+      console.log("Nincs megjeleníthető termék a kiválasztott feltételekkel.");
+  }
 }
+
 
 
 // Szűrő események
@@ -231,8 +250,15 @@ checkoutBtn.addEventListener('click', () => {
     alert("A kosár üres.");
   } else {
     let receipt = "Kosár tartalma:\n";
-    cart.forEach(product => {
+    const purchaseData = cart.map(product => {
       receipt += `${product.title} - Méret: ${product.size}, Szín: ${product.color}, Mennyiség: ${product.quantity}, Darab ára: ${product.price} Ft, Összesen: ${product.price * product.quantity} Ft\n`;
+      return {
+        Név: product.title,
+        Méret: product.size,
+        Szín: product.color,
+        Mennyiség: product.quantity,
+        Darab_ár: product.price
+      };
     });
     receipt += `\n ${document.getElementById('total-price').textContent}`;
 
@@ -242,5 +268,16 @@ checkoutBtn.addEventListener('click', () => {
     printWindow.focus();
     printWindow.print();
     printWindow.close();
+
+    let sorszam = Math.floor(Math.random() * 9999) + 1000;
+    alert("Az ön rendelési száma: "+sorszam)
+
+    // JSON fájl generálása és letöltés elindítása
+    const blob = new Blob([JSON.stringify(purchaseData, null, 2)], { type: 'application/json' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = sorszam+'.json'; // A fájl neve, amit a felhasználó letölthet
+    link.click();  // Automatikusan elindítja a letöltést
+    
   }
 });

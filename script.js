@@ -4,6 +4,22 @@ const productPrices = {
   "Termék 2": 3000
 };
 
+//szűrő meg jelenít
+const toggleButton = document.getElementById('szurob');
+const filterDiv = document.getElementById('szuro');
+
+toggleButton.addEventListener('click', function() {
+    if (filterDiv.classList.contains('hidden')) {
+        filterDiv.classList.remove('hidden');
+        filterDiv.classList.add('show');
+    } else {
+        filterDiv.classList.remove('show');
+        filterDiv.classList.add('hidden');
+    }
+});
+
+
+
 // Képek színek szerint
 const productImages = {
   '1': {

@@ -12,15 +12,16 @@
   <!-- Fejléc -->
   <nav class="navbar navbar-light bg-light">
     <div class="container">  
-      <a class="navbar-brand" href="#"><img src="./logo.jpg" alt="" height="60px" width="60px"></a>
+      <a class="navbar-brand" href="#"><img src="./logo.jpg" alt="" height="60px" width="60px" class="logo"></a>
     </div>
   </nav>
 
   <!-- Szűrők -->
-  <div class="container-fluid">
+  <button class="btn btn-outline-success" id="szurob">Szűrők</button>
+  <div class="container-fluid hidden" id="szuro">
     <div class="row flex-nowrap">
         <div class="col-1 col-md-1 col-xl-2 px-sm-1 px-0 bg-dark sidenav">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <div class="szurobelso d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
               <label for="nem" class="align-midle">Nem:</label>
               <select id="nem">
                   <option value="all">Összes</option>

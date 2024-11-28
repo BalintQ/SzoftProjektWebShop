@@ -1,10 +1,10 @@
 let cart = [];
 const productPrices = {
-  "Férfi Air Jordan 1 Low": 39990,
-  "Női Air Jordan 1 Low": 35999,
-  "Férfi Air Jordan 1 Mid": 49999,
-  "Női Air Jordan 1 Mid": 41500,
-  "Férfi Air Jordan 1 High": 43499,
+  "Air Jordan 1 Low Férfi": 39990,
+  "Air Jordan 1 Low Női": 35999,
+  "Air Jordan 1 Mid Férfi": 49999,
+  "Air Jordan 1 Mid Női": 41500,
+  "Air Jordan 1 High Férfi": 43499,
 };
 
 //szűrő meg jelenít
@@ -136,7 +136,7 @@ function updateCart() {
     const item = document.createElement('li');
     item.classList.add('list-group-item');
 
-    if (product.title === 'Air Jordan 1 Low') {
+    if (product.title === 'Air Jordan 1 Low Férfi') {
       item.innerHTML = `
         <div>
           <strong>${product.title}</strong> <br> Méret: 
@@ -146,6 +146,8 @@ function updateCart() {
             <option value="40" ${product.size === '40' ? 'selected' : ''}>40</option>
             <option value="41" ${product.size === '41' ? 'selected' : ''}>41</option>
             <option value="42" ${product.size === '42' ? 'selected' : ''}>42</option>
+            <option value="43" ${product.size === '43' ? 'selected' : ''}>43</option>
+            <option value="44" ${product.size === '44' ? 'selected' : ''}>44</option>
           </select> <br>
           Szín: 
           <select class="color-select" onchange="updateProductColor(${index}, this.value)">
@@ -172,7 +174,7 @@ function updateCart() {
       `;
     }
 
-    if (product.title === 'Air Jordan 1 Low') {
+    if (product.title === 'Air Jordan 1 Low Női') {
       item.innerHTML = `
         <div>
           <strong>${product.title}</strong> <br> Méret: 

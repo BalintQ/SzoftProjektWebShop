@@ -191,7 +191,7 @@ function updateCart() {
       `;
     }
 
-    if (product.title === 'Air Jordan 1 Low') {
+    if (product.title === 'Air Jordan 1 Mid') {
       item.innerHTML = `
         <div>
           <strong>${product.title}</strong> <br> Méret: 

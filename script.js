@@ -4,6 +4,7 @@ const productPrices = {
   "Air Jordan 1 Low Női": 35999,
   "Air Jordan 1 Mid Férfi": 49999,
   "Air Jordan 1 Mid Női": 41500,
+  "Air Jordan 1 High Férfi": 43499,
 };
 
 //szűrő meg jelenít
@@ -73,11 +74,18 @@ const productImages = {
 },
 
 '4': {
-  'Barna-Rózyaszín': 'Kepek/kozepmagasszaru/noi/AIR JORDAN 1 MID barna_rozsaszin.jfif',
+  'Barna-Rózsaszín': 'Kepek/kozepmagasszaru/noi/AIR JORDAN 1 MID barna_rozsaszin.jfif',
   'Mentazöld': 'Kepek/kozepmagasszaru/noi/AIR JORDAN 1 MID mentazold.jfif',
   'Vajszínű': 'Kepek/kozepmagasszaru/noi/AIR JORDAN 1 MID vajszinu.png',
   'Vérvörös' : 'Kepek/kozepmagasszaru/noi/AIR JORDAN 1 MID vervoros.png',
   'Zöld' : 'Kepek/kozepmagasszaru/noi/AIR JORDAN 1 MID zold.jfif',
+},
+
+'4': {
+  'Fehér-Zöld': 'Kepek/magasszaru/ferfi/AIR JORDAN 1 HIGH feher_zold.jfif',
+  'Kék-Fekete': 'Kepek/magasszaru/ferfi/AIR JORDAN 1 HIGH kek_fekete.jfif',
+  'Terepmintás': 'Kepek/magasszaru/ferfi/AIR JORDAN 1 HIGH terepmintas.jfif',
+  'Világosbarna' : 'Kepek/magasszaru/ferfi/AIR JORDAN 1 HIGH vilagosbarna.jfif',
 },
 };
 
@@ -243,6 +251,33 @@ function updateCart() {
             <option value="38" ${product.size === '38' ? 'selected' : ''}>38</option>
             <option value="39" ${product.size === '39' ? 'selected' : ''}>39</option>
             <option value="40" ${product.size === '40' ? 'selected' : ''}>40</option>
+          </select> <br>
+          Szín: 
+          <select class="color-select" onchange="updateProductColor(${index}, this.value)">
+            <option value="Barna-Rózsaszín" ${product.color === 'Barna-Rózsaszín' ? 'selected' : ''}>Barna-Rózsaszín</option>
+            <option value="Mentazöld" ${product.color === 'Mentazöld' ? 'selected' : ''}>Mentazöld</option>
+            <option value="Vajszínű" ${product.color === 'Vajszínű' ? 'selected' : ''}>Vajszínű</option>
+            <option value="Vérvörös" ${product.color === 'Vérvörös' ? 'selected' : ''}>Vérvörös</option>
+            <option value="Zöld" ${product.color === 'Zöld' ? 'selected' : ''}>Zöld</option>
+          
+          </select> <br>
+          Mennyiség: <input type="number" class="quantity-input" value="${product.quantity}" min="1" style="width: 50px;">
+          <p>Darab ár: ${product.price} Ft <br>Összesen: ${product.price * product.quantity} Ft</p>
+          <button class="btn btn-danger btn-sm remove-from-cart-btn" style="float: right;">Eltávolítás</button>
+        </div>
+      `;
+    }
+
+    if (product.title === 'Air Jordan 1 High') {
+      item.innerHTML = `
+        <div>
+          <strong>${product.title}</strong> <br> Méret: 
+            <option value="40" ${product.size === '40' ? 'selected' : ''}>40</option>
+            <option value="41" ${product.size === '41' ? 'selected' : ''}>41</option>
+            <option value="42" ${product.size === '42' ? 'selected' : ''}>42</option>
+            <option value="43" ${product.size === '43' ? 'selected' : ''}>43</option>
+            <option value="44" ${product.size === '44' ? 'selected' : ''}>44</option>
+            <option value="45" ${product.size === '45' ? 'selected' : ''}>45</option>
           </select> <br>
           Szín: 
           <select class="color-select" onchange="updateProductColor(${index}, this.value)">

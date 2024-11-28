@@ -211,7 +211,7 @@ function updateCart() {
       `;
     }
 
-    if (product.title === 'Air Jordan 1 Mid') {
+    if (product.title === 'Air Jordan 1 Mid Férfi') {
       item.innerHTML = `
         <div>
           <strong>${product.title}</strong> <br> Méret: 
@@ -241,10 +241,11 @@ function updateCart() {
       `;
     }
 
-    if (product.title === 'Air Jordan 1 Mid') {
+    if (product.title === 'Air Jordan 1 Mid Női') {
       item.innerHTML = `
         <div>
           <strong>${product.title}</strong> <br> Méret: 
+          <select class="size-select" style="display: inline-block; width: auto;">
             <option value="35" ${product.size === '35' ? 'selected' : ''}>35</option>
             <option value="36" ${product.size === '36' ? 'selected' : ''}>36</option>
             <option value="37" ${product.size === '37' ? 'selected' : ''}>37</option>
@@ -268,10 +269,11 @@ function updateCart() {
       `;
     }
 
-    if (product.title === 'Air Jordan 1 High') {
+    if (product.title === 'Air Jordan 1 High Férfi') {
       item.innerHTML = `
         <div>
           <strong>${product.title}</strong> <br> Méret: 
+          <select class="size-select" style="display: inline-block; width: auto;">
             <option value="40" ${product.size === '40' ? 'selected' : ''}>40</option>
             <option value="41" ${product.size === '41' ? 'selected' : ''}>41</option>
             <option value="42" ${product.size === '42' ? 'selected' : ''}>42</option>

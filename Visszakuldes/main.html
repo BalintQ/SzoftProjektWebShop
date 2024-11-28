@@ -16,9 +16,15 @@
     </div>
   </nav>
 
-  <input type="file" id="fileInput" accept=".json" />
+
+  <div class="file-input btn btn-info" id="file-div">
+    <input type="file" id="fileInput" accept=".json" class="file">
+    <label for="fileInput">Blokk fájl kiválasztása</label>
+  </div>
+
+<div class="táblázat hidden" id="tabla">
   <h2>A Termékek Listája:</h2>
-<br>
+  <br>
 
   <div class="center">
   <table class="table table-striped w-75">
@@ -36,6 +42,6 @@
     </tbody>
   </table>
   </div>
-
+</div>
   <script src="./visszascript.js"></script>
 </body>

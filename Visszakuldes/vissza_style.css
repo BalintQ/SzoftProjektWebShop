@@ -9,8 +9,30 @@
     width: 100%;
     position: sticky;
   }
-.center{
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
+
+.file-input label {
+  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform .2s ease-out;
+}
+
+.file-input{
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  width: 200px;
+}
+
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+
+.hidden{
+  visibility: hidden;
 }

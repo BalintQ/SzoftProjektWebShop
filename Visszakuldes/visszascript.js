@@ -1,5 +1,7 @@
 const fileInput = document.getElementById("fileInput");
 const tableBody = document.getElementById("productTableBody");
+const tablazat = document.getElementById("tabla")
+const file = document.getElementById("file-div")
 
 // Fájl kiválasztása és feldolgozása
 fileInput.addEventListener("change", event => {
@@ -21,6 +23,8 @@ fileInput.addEventListener("change", event => {
 // Táblázat frissítése
 function updateTable(data) {
     tableBody.innerHTML = ""; // Táblázat kiürítése
+    tablazat.classList.remove("hidden")
+    file.classList.add("hidden")
     data.forEach(product => {
         const row = document.createElement("tr");
         row.innerHTML = `
@@ -32,4 +36,13 @@ function updateTable(data) {
         `;
         tableBody.appendChild(row);
     });
+}
+
+//táblázat megjelenítése/elrejtése
+function tablazat_lathatosag(file){
+    if (file.files.length == 0) {
+        console.log("nincs file")
+    } else {
+        console.log("van fájl")
+    }
 }

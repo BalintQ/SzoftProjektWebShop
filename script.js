@@ -5,6 +5,7 @@ const productPrices = {
   "Air Jordan 1 Mid Férfi": 49999,
   "Air Jordan 1 Mid Női": 41500,
   "Air Jordan 1 High Férfi": 43499,
+  "Air Jordan 1 High Női": 40000,
 };
 
 //szűrő meg jelenít
@@ -81,14 +82,20 @@ const productImages = {
   'Zöld' : 'Kepek/kozepmagasszaru/noi/AIR JORDAN 1 MID zold.jfif',
 },
 
-'4': {
+'5': {
   'Fehér-Zöld': 'Kepek/magasszaru/ferfi/AIR JORDAN 1 HIGH feher_zold.jfif',
   'Kék-Fekete': 'Kepek/magasszaru/ferfi/AIR JORDAN 1 HIGH kek_fekete.jfif',
   'Terepmintás': 'Kepek/magasszaru/ferfi/AIR JORDAN 1 HIGH terepmintas.jfif',
   'Világosbarna' : 'Kepek/magasszaru/ferfi/AIR JORDAN 1 HIGH vilagosbarna.jfif',
 },
-};
 
+
+'6': {
+  'Világosbarna': 'Kepek/magasszaru/noi/AIR JORDAN 1 HIGH vilagosbarna.jfif',
+  'Világosbarna-rózsaszín': 'Kepek/magasszaru/noi/AIR JORDAN 1 HIGHvilagosbarna_rozsaszin.jfif',
+  'Zöld-sárga': 'Kepek/magasszaru/noi/AIR JORDAN 1 HIGHzold_sarga.jfif/',
+},
+};
 // Kosár megjelenítése és elrejtése
 const cartSidebar = document.getElementById('cart-sidebar');
 const toggleCartBtn = document.getElementById('toggle-cart-btn');
@@ -288,6 +295,32 @@ function updateCart() {
             <option value="Vajszínű" ${product.color === 'Vajszínű' ? 'selected' : ''}>Vajszínű</option>
             <option value="Vérvörös" ${product.color === 'Vérvörös' ? 'selected' : ''}>Vérvörös</option>
             <option value="Zöld" ${product.color === 'Zöld' ? 'selected' : ''}>Zöld</option>
+          
+          </select> <br>
+          Mennyiség: <input type="number" class="quantity-input" value="${product.quantity}" min="1" style="width: 50px;">
+          <p>Darab ár: ${product.price} Ft <br>Összesen: ${product.price * product.quantity} Ft</p>
+          <button class="btn btn-danger btn-sm remove-from-cart-btn" style="float: right;">Eltávolítás</button>
+        </div>
+      `;
+    }
+
+    if (product.title === 'Air Jordan 1 High Nő35i') {
+      item.innerHTML = `
+        <div>
+          <strong>${product.title}</strong> <br> Méret: 
+          <select class="size-select" style="display: inline-block; width: auto;">
+            <option value="40" ${product.size === '35' ? 'selected' : ''}>35</option>
+            <option value="41" ${product.size === '36' ? 'selected' : ''}>36</option>
+            <option value="42" ${product.size === '37' ? 'selected' : ''}>37</option>
+            <option value="43" ${product.size === '38' ? 'selected' : ''}>38</option>
+            <option value="44" ${product.size === '39' ? 'selected' : ''}>39</option>
+            <option value="45" ${product.size === '40' ? 'selected' : ''}>40</option>
+          </select> <br>
+          Szín: 
+          <select class="color-select" onchange="updateProductColor(${index}, this.value)">
+            <option value="Világosbarna" ${product.color === 'Világosbarna' ? 'selected' : ''}>Világosbarna</option>
+            <option value="Világosbarna-rózsaszín" ${product.color === 'Világosbarna-rózsaszín' ? 'selected' : ''}>Világosbarna-rózsaszín</option>
+            <option value="Zöld-sárga" ${product.color === 'Zöld-sárga' ? 'selected' : ''}>Zöld-sárga</option>
           
           </select> <br>
           Mennyiség: <input type="number" class="quantity-input" value="${product.quantity}" min="1" style="width: 50px;">

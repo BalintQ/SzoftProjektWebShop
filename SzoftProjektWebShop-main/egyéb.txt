@@ -1,0 +1,3 @@
+getelemetbyid .hidden = true
+
+document.getElementsByClassName

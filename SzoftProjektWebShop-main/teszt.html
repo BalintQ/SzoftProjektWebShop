@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./logo_mini.jpg" type="image/icon type">
+  <title>KickCraze</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Fejléc -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">  
+      <a class="navbar-brand" href="#"><img src="./logo.jpg" alt="" height="60px" width="60px" class="logo"></a>
+    </div>
+  </nav>
+
+  <!-- Szűrők -->
+  <button class="btn btn-outline-success" id="szurob">Szűrők</button>
+  <div class="container-fluid hidden" id="szuro">
+    <div class="row flex-nowrap">
+        <div class="col-1 col-md-1 col-xl-2 px-sm-1 px-0 bg-dark sidenav">
+            <div class="szurobelso d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+              <label for="nem" class="align-midle">Nem:</label>
+              <select id="nem">
+                  <option value="all">Összes</option>
+                  <option value="ferfi">Férfi</option>
+                  <option value="no">Női</option>
+              </select>
+              
+              <label for="kategoria" class="align-midle">Kategória:</label>
+              <select id="kategoria">
+                  <option value="all">Összes</option>
+                  <option value="alacsony">Alacsonyszárú</option>
+                  <option value="kozep">Középmagasszárú</option>
+                  <option value="magas">Magasszárú</option>
+              </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+  <!-- Kosár gomb -->
+  <button class="btn btn-outline-success" id="toggle-cart-btn" style="position: fixed; right: 20px; top: 10px; z-index: 1000;">Kosár</button>
+
+  <!-- Termékek -->
+  <div class="container mt-4 product">
+    <div class="row" id="product-list">
+      <!-- Termékek kártyái -->
+      <div class="termek col-md-4" data-nem="ferfi" data-kategoria="alacsony">
+        <div class="card">
+          <div class="Img_base">
+          <img src="./Kepek/alacsonyszaru/ferfi/AIR JORDAN 1 LOW arany_feher.jfif" class="card-img-top" alt="Férfi Air Jordan 1 Low arany_feher" id="product-image-1">
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-title">Air Jordan 1 Low Férfi</h5>
+            <p>Ár: 39990 Ft</p>
+            <div>
+              <label>Méret:</label>
+              <select class="form-select size-select">
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+              </select>
+            </div>
+            <div class="mt-2">
+              <label>Szín:</label>
+              <select class="form-select color-select" onchange="changeProductImage('1', this.value)">
+                <option value="Arany-Fehér">Arany-Fehér</option>
+                <option value="Fehér-Fekete">Fehér-Fekete</option>
+                <option value="Fehér">Fehér</option>
+                <option value="Fehér-Kék">Fehér-Kék</option>
+                <option value="Fekete">Fekete</option>
+                <option value="Fekete-Kék">Fekete-Kék</option>
+                <option value="Kék">Kék</option>
+                <option value="Kék-Fehér">Kék-Fehér</option>
+                <option value="Piros-Fekete">Piros-Fekete</option>
+                <option value="Sötétzöld">Sötétzöld</option>
+                <option value="Szürke-Fehér">Szürke-Fehér</option>
+                <option value="Szürke-Piros">Szürke-Piros</option>
+                <option value="Zöld-Fekete-Fehér">Zöld-Fekete-Fehér</option>
+                <option value="Fekete-Fehér-Kék">Fekete-Fehér-Kék</option>
+                <option value="Plüssmintás Zöld">Plüssmintás Zöld</option>
+              </select>
+            </div>
+            <button class="btn btn-info mt-3 add-to-cart-btn">Kosárba</button>
+          </div></div>
+      </div>
+
+      <!-- Új termék -->
+
+
+      <div class="termek col-md-4" data-nem="no" data-kategoria="alacsony">
+
+        <div class="card">
+          <div class="Img_base">
+            <img src="./Kepek/alacsonyszaru/noi/AIR JORDAN 1 LOW barna.jfif" class="card-img-top" alt="Női Air Jordan 1 Low barna" id="product-image-2">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Air Jordan 1 Low Női</h5>
+            <p>Ár: 35999 Ft</p>
+            <div>
+              <label>Méret:</label>
+              <select class="form-select size-select">
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+              </select>
+            </div>
+            <div class="mt-2">
+              <label>Szín:</label>
+
+              <select class="form-select color-select" onchange="changeProductImage('2', this.value)"> <!--a js ben is kell módosítani a színt -->
+                  <option value="Barna">Barna</option>
+                  <option value="Barna-Fekete">Barna-Fekete</option>
+                  <option value="Bőrszínű">Bőrszínű</option>
+                  <option value="Fehér">Fehér</option>
+                  <option value="Fekete">Fekete</option>
+                  <option value="Fekete-Fehér">Fekete-Fehér</option>
+                  <option value="Fekete-Kék">Fekete-Kék</option>
+                  <option value="Kék-Fehér">Kék-Fehér</option>
+                  <option value="Lila-Rózsaszín">Lila-Rózsaszín</option>
+                  <option value="Rózsaszín">Rózsaszín</option>
+                  <option value="Rózsaszín-Fehér">Rózsaszín-Fehér</option>
+                  <option value="Vérvörös">Vérvörös</option>
+                  <option value="Világoskék">Világoskék</option>
+                  <option value="Magenta">Magenta</option>
+                  <option value="Szürke-Fehér">Szürke-Fehér</option>
+                  <option value="Zöld-Fehér">Zöld-Fehér</option>
+              </select>
+            </div>
+            <button class="btn btn-info mt-3 add-to-cart-btn">Kosárba</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- További termékek hozzáadása hasonlóan -->
+
+      <div class="termek col-md-4" data-nem="ferfi" data-kategoria="kozep">
+        <div class="card">
+          <img src="./Kepek/kozepmagasszaru/ferfi/AIR JORDAN 1 MID barna.jfif" class="card-img-top" alt="Férfi Air Jordan 1 Mid barna" id="product-image-3">
+          <div class="card-body">
+            <h5 class="card-title">Air Jordan 1 Mid Férfi</h5>
+            <p>Ár: 44999 Ft</p>
+            <div>
+              <label>Méret:</label>
+              <select class="form-select size-select">
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+              </select>
+            </div>
+            <div class="mt-2">
+              <label>Szín:</label>
+              <select class="form-select color-select" onchange="changeProductImage('3', this.value)"> <!--a js ben is kell módosítani a színt -->
+                <option value="Barna">Barna</option>
+                <option value="Fehér-Fekete">Fehér-Fekete</option>
+                <option value="Fehér-Kék">Fehér-Kék</option>
+                <option value="Fehér-Neonzöld">Fehér-Neonzöld</option>
+                <option value="Szürke-Fekete">Szürke-Fekete</option>
+                <option value="Vérvörös">Vérvörös</option>
+                <option value="Zöld">Zöld</option>
+              </select>
+            </div>
+            <button class="btn btn-primary mt-3 add-to-cart-btn">Kosárba</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="termek col-md-4" data-nem="no" data-kategoria="kozep">
+        <div class="card">
+          <img src="./Kepek/kozepmagasszaru/noi/AIR JORDAN 1 MID barna_rozsaszin.jfif" class="card-img-top" alt="Női Air Jordan 1 Mid barna-rózsaszín" id="product-image-4">
+          <div class="card-body">
+            <h5 class="card-title">Air Jordan 1 Mid Női</h5>
+            <p>Ár: 41500 Ft</p>
+            <div>
+              <label>Méret:</label>
+              <select class="form-select size-select">
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+              </select>
+            </div>
+            <div class="mt-2">
+              <label>Szín:</label>
+              <select class="form-select color-select" onchange="changeProductImage('4', this.value)"> <!--a js ben is kell módosítani a színt -->
+                <option value="Barna-Rózsaszín">Barna-Rózsaszín</option>
+                <option value="Mentazöld">Mentazöld</option>
+                <option value="Vajszínű">Vajszínű</option>
+                <option value="Vérvörös">Vérvörös</option>
+                <option value="Zöld">Zöld</option>
+              </select>
+            </div>
+            <button class="btn btn-primary mt-3 add-to-cart-btn">Kosárba</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="termek col-md-4" data-nem="ferfi" data-kategoria="magas">
+        <div class="card">
+          <img src="./Kepek/magasszaru/ferfi/AIR JORDAN 1 HIGH feher_zold.jfif" class="card-img-top" alt="Férfi Air Jordan 1 Mid barna" id="product-image-5">
+          <div class="card-body">
+            <h5 class="card-title">Air Jordan 1 High Férfi</h5>
+            <p>Ár: 43499 Ft</p>
+            <div>
+              <label>Méret:</label>
+              <select class="form-select size-select">
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+              </select>
+            </div>
+            <div class="mt-2">
+              <label>Szín:</label>
+              <select class="form-select color-select" onchange="changeProductImage('5', this.value)"> <!--a js ben is kell módosítani a színt -->
+                <option value="Feher-Zöld">Feher-Zöld</option>
+                <option value="Kék-Fekete">Kék-Fekete</option>
+                <option value="Terepmintás">Terepmintás</option>
+                <option value="világosbarna">világosbarna</option>
+                <option value="Lila">Lila</option>
+              </select>
+            </div>
+            <button class="btn btn-primary mt-3 add-to-cart-btn">Kosárba</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="termek col-md-4" data-nem="no" data-kategoria="magas">
+        <div class="card">
+          <img src="https://via.placeholder.com/150/FF0000" class="card-img-top" alt="Termék 2 Piros" id="product-image-2">
+          <div class="card-body">
+            <h5 class="card-title">Termék 2</h5>
+            <p>Ár: 3000 Ft</p>
+            <div>
+              <label>Méret:</label>
+              <select class="form-select size-select">
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+              </select>
+            </div>
+            <div class="mt-2">
+              <label>Szín:</label>
+              <select class="form-select color-select" onchange="changeProductImage('2', this.value)"> <!--a js ben is kell módosítani a színt -->
+                <option value="Piros">Piros</option>
+                <option value="Kék">Kék</option>
+                <option value="Zöld">Zöld</option>
+                <option value="Fehér">Fehér</option>
+                <option value="Lila">Lila</option>
+              </select>
+            </div>
+            <button class="btn btn-primary mt-3 add-to-cart-btn">Kosárba</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kosár -->
+  <div class="cart-sidebar" id="cart-sidebar">
+    <h4>Kosár</h4>
+    <ul class="list-group" id="cart-items">
+      <!-- Kosár termékek ide kerülnek -->
+    </ul>
+    <p id="total-price" class="mt-3">Összesen: 0 Ft</p>
+    <button class="btn btn-danger mt-3" id="checkout-btn">Fizetés</button>
+  </div>
+
+  <script src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

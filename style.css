@@ -9,6 +9,7 @@
         padding: 20px;
         transition: right 0.3s;
         box-shadow: -2px 0px 10px rgb(174, 221, 243);
+        z-index: 9999;
       }
       #cart-items {
         max-height: 400px;
@@ -92,7 +93,7 @@
         height: 100%;
         width: 200px;
         position: fixed;
-        z-index: 1;
+        z-index: 9999;
         top: 0px;
       }
 

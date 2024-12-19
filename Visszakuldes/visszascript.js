@@ -25,6 +25,7 @@ function updateTable(data) {
     tableBody.innerHTML = ""; // Táblázat kiürítése
     tablazat.classList.remove("hidden")
     file.classList.add("hidden")
+    myModal.toggle()
     data.forEach(product => {
         const row = document.createElement("tr");
         row.innerHTML = `

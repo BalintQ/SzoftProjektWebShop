@@ -81,7 +81,7 @@
       position: fixed; 
       left: 20px; 
       top: 10px; 
-      z-index: 1000;
+      z-index: 10000;
     }
     .szurobelso{
       position: relative;
@@ -94,4 +94,11 @@
         position: fixed;
         z-index: 1;
         top: 0px;
+      }
+
+      .nav-link{
+        position: absolute;
+        left: 18%;
+        top: 20px;
+        font-weight: 500;
       }

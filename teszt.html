@@ -10,9 +10,14 @@
 </head>
 <body>
   <!-- Fejléc -->
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-light bg-light sticky-top">
     <div class="container">  
-      <a class="navbar-brand" href="#"><img src="./logo.jpg" alt="" height="60px" width="60px" class="logo"></a>
+      <a class="navbar-brand" href="#grid"><img src="./logo.jpg" alt="" height="60px" width="60px" class="logo"></a>
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="./Visszakuldes/main.html">Visszaküldés</a>
+      </li>
+      </ul>
     </div>
   </nav>
 
@@ -44,10 +49,10 @@
 
 
   <!-- Kosár gomb -->
-  <button class="btn btn-outline-success" id="toggle-cart-btn" style="position: fixed; right: 20px; top: 10px; z-index: 1000;">Kosár</button>
+  <button class="btn btn-outline-success" id="toggle-cart-btn" style="position: fixed; right: 20px; top: 10px; z-index: 10000;">Kosár</button>
 
   <!-- Termékek -->
-  <div class="container mt-4 product">
+  <div class="container mt-4 product" id="grid">
     <div class="row" id="product-list">
       <!-- Termékek kártyái -->
       <div class="termek col-md-4" data-nem="ferfi" data-kategoria="alacsony">

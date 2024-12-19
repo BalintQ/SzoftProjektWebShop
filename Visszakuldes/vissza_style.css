@@ -36,3 +36,10 @@
 .hidden{
   visibility: hidden;
 }
+
+.nav-link{
+  position: absolute;
+  left: 18%;
+  top: 20px;
+  font-weight: 500;
+}

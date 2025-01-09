@@ -93,7 +93,7 @@ const productImages = {
 '6': {
   'Világosbarna': 'Kepek/magasszaru/noi/AIR JORDAN 1 HIGH vilagosbarna.jfif',
   'Világosbarna-rózsaszín': 'Kepek/magasszaru/noi/AIR JORDAN 1 HIGHvilagosbarna_rozsaszin.jfif',
-  'Zöld-sárga': 'Kepek/magasszaru/noi/AIR JORDAN 1 HIGHzold_sarga.jfif/',
+  'Zöld-sárga': 'Kepek/magasszaru/noi/AIR JORDAN 1 HIGHzold_sarga.jfif',
 },
 };
 // Kosár megjelenítése és elrejtése

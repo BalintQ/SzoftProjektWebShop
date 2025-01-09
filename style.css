@@ -103,3 +103,7 @@
         top: 20px;
         font-weight: 500;
       }
+
+      .navbar-toggler{
+        margin: auto;
+      }

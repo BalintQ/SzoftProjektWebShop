@@ -104,6 +104,13 @@
         font-weight: 500;
       }
 
+      .nav-link-2{
+        position: absolute;
+        left: 26%;
+        top: 20px;
+        font-weight: 500;
+      }
+
       .navbar-toggler{
         margin: auto;
       }

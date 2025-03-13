@@ -1,0 +1,19 @@
+.logo{
+    left: 13%;
+    position: absolute;
+    top: 10px;
+  }
+
+  nav{
+    height: 80px;
+    width: 100%;
+    position: sticky;
+  }
+
+
+.nav-link{
+  position: absolute;
+  left: 18%;
+  top: 20px;
+  font-weight: 500;
+}

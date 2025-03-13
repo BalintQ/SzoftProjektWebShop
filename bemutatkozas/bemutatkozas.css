@@ -11,9 +11,28 @@
   }
 
 
+/*navbar top*/
+
 .nav-link{
+  position: absolute;
+  top: 20px;
+  font-weight: 500;
+}
+
+.nav-poz-1{
   position: absolute;
   left: 18%;
   top: 20px;
   font-weight: 500;
+}
+
+.nav-poz-2{
+  position: absolute;
+  left: 26%;
+  top: 20px;
+  font-weight: 500;
+}
+
+.navbar-toggler{
+  margin: auto;
 }

@@ -12,16 +12,11 @@ const productPrices = {
 const toggleButton = document.getElementById('szurob');
 const filterDiv = document.getElementById('szuro');
 
-toggleButton.addEventListener('click', function() {
-    if (filterDiv.classList.contains('hidden')) {
-        filterDiv.classList.remove('hidden');
-        filterDiv.classList.add('show');
-    } else {
-        filterDiv.classList.remove('show');
-        filterDiv.classList.add('hidden');
-    }
+toggleButton.addEventListener('click', () => {
+  const isOpen = filterDiv.style.left === '0px';
+  filterDiv.style.left = isOpen ? '-300px' : '0px';
+  toggleButton.textContent = isOpen ? 'Szűrők' : 'Bezárás';
 });
-
 
 
 // Képek színek szerint

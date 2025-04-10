@@ -1,10 +1,17 @@
-    /*háttér*/
-    body {
-      background-image: linear-gradient(180deg, rgb(182, 183, 184), rgb(204, 253, 255));
-      background-attachment: fixed;
-    }
+body {
+    background-image: linear-gradient(180deg, rgb(182, 183, 184), rgb(204, 253, 255));
+    background-attachment: fixed;
+  }
 
-.logo{
+.container {
+    max-width: 600px;
+    margin-top: 50px;
+  }
+  .alert {
+    display: none;
+  }
+
+  .logo{
     left: 13%;
     position: absolute;
     top: 10px;

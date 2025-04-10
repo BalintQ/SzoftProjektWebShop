@@ -93,6 +93,16 @@
       position: relative;
       top: 40px;
     }
+    #szuro {
+      position: fixed;
+      top: 0;
+      left: -300px; /* <- eltoljuk balra, hogy rejtve legyen */
+      width: 200px;
+      height: 100%;
+      transition: left 0.3s;
+      z-index: 9999;
+    }
+
     /*szűrő széle */
       .sidenav {
         height: 100%;
@@ -100,6 +110,7 @@
         position: fixed;
         z-index: 9999;
         top: 0px;
+        background-color: #ac9ce9;
       }
 
 /*navbar top*/
@@ -116,13 +127,20 @@
         top: 20px;
         font-weight: 500;
       }
-
+      
       .nav-poz-2{
         position: absolute;
-        left: 26%;
+        left: 24%;
         top: 20px;
         font-weight: 500;
       }
+      
+      .nav-poz-3{
+          position: absolute;
+          left: 28%;
+          top: 20px;
+          font-weight: 500;
+        }
 
       .navbar-toggler{
         margin: auto;
